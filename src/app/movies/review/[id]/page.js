@@ -237,7 +237,8 @@ const getMovieById = async (id) => {
                 {reviews.map((r, i) => (
                   <div key={i} className="bg-[#111] p-4 rounded shadow hover:shadow-yellow-500/20">
                     <div className="flex items-center gap-3 mb-3">
-                      <Image src={r.img} className="w-10 h-10 rounded-full border border-yellow-500" />
+                      <img className=" rounded-full border border-yellow-500" width="10" height="10" alt="" src={img} />
+
                       <div>
                         <p className="text-white font-semibold">{r.name}</p>
                         <p className="text-sm text-gray-400">{r.username}</p>

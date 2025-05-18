@@ -4,19 +4,20 @@ export default function ReviewCard  ({
   img,
   name,
   username,
-  rating
+  rating,
+  id
 })  {
   return (
     <figure
       className={cn(
-        "relative h-full w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
+        "relative h-full w-64 overflow-hidden rounded-xl border p-4",
         // light styles
         "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
         // dark styles
         "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
       )}
     >
-       <div className="relative rounded-xl overflow-hidden shadow-md w-[240px] h-[230px]">
+       <Link href={`/movies/review/${id}`} className="cursor-pointer relative rounded-xl overflow-hidden shadow-md w-[240px] h-[230px]">
       {/* Movie Poster */}
       <img
         src={img}
@@ -36,7 +37,7 @@ export default function ReviewCard  ({
           </div>
         </div>
       </div>
-    </div>
+    </Link>
       {/* <blockquote className="mt-2 text-sm">{body}</blockquote> */}
     </figure>
   );

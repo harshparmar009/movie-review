@@ -19,6 +19,7 @@ export default function MarqueeDemo({ movies, loading }) {
               key={movie._id}
               rating={movie.rating}
               img={movie.image}
+              id={movie._id} 
               name={movie.title}
               username={movie.release}
               body={movie.content}
@@ -32,6 +33,7 @@ export default function MarqueeDemo({ movies, loading }) {
               key={movie._id}
               rating={movie.rating}
               img={movie.image}
+              id={movie._id}
               name={movie.title}
               username={movie.release}
               body={movie.content}

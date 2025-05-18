@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
@@ -116,9 +115,9 @@ const ArticleCard = ({ article }) => {
         </section>
       ))}
 
-      <Link href={article.slug} className="inline-block mt-4 text-blue-400 underline hover:text-blue-200">
+      {/* <Link href={article.slug} className="inline-block mt-4 text-blue-400 underline hover:text-blue-200">
         Read full article →
-      </Link>
+      </Link> */}
     </motion.article>
   );
 };
