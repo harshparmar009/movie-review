@@ -15,11 +15,13 @@ const HeroSection = () => {
     const fetchMovies = async () => {
       setLoading(true);
       try {
-        const res = await fetch(
-          `${process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"}/api/movies`,
-          { cache: "no-store" }
-        );
+        // const res = await fetch(
+        //   `${process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"}/api/movies`,
+        //   { cache: "no-store" }
+        // );
+        const res = await fetch("/api/movies", { cache: "no-store" });
 
+        
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);
         }
