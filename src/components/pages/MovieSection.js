@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import SliderCard from '@/components/SliderCard'
 import HeroArticles from "../ArticleCard";
 import CorouselDemo from '@/components/Corousel'
+import Image from "next/image";
 
 
 const HeroSection = () => {
@@ -73,9 +74,11 @@ const HeroSection = () => {
          key={index}
          className="relative rounded-xl overflow-hidden group hover:scale-[1.01] transition"
        >
-         <img
+         <Image
            src={news.image}
            alt={news.title}
+           width={1000}
+           height={1000}
            className="w-full h-64 md:h-80 object-cover object-top"
          />
        
@@ -121,8 +124,10 @@ const HeroSection = () => {
          key={index}
          className="relative rounded-xl overflow-hidden group hover:scale-[1.01] transition"
        >
-         <img
+         <Image
            src={news.image}
+           width={1000}
+           height={1000}
            alt={news.title}
            className="w-full h-64 md:h-80 object-cover object-top"
          />

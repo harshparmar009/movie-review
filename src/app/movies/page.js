@@ -30,7 +30,8 @@ export default function MovieGrid() {
     const type = getTypeFromTab(tab);
     setLoading(true);
     try {
-      const res = await fetch(`/api/movies/filter/${type}`);
+      const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/movies/filter/${type}`);
+
       if (!res.ok) throw new Error("Failed to fetch movies");
       const data = await res.json();
       setMovies(data);
