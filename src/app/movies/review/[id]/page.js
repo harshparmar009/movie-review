@@ -67,9 +67,12 @@ function getRandomReviews(count = 4) {
 }
 
 const getMovieById = async (id) => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"}/api/movies/${id}`, {
+  const res = await fetch(`/api/movies/${id}`, {
     cache: "no-store",
   });
+  // const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"}/api/movies/${id}`, {
+  //   cache: "no-store",
+  // });
 
   if (!res.ok) {
     throw new Error("Failed to fetch movie");

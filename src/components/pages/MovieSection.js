@@ -21,7 +21,6 @@ const HeroSection = () => {
         // );
         const res = await fetch("/api/movies", { cache: "no-store" });
 
-        
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);
         }

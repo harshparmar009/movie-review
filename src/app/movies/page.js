@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import MovieCard from "@/components/MovieCard";
 
 export default function MovieGrid() {
@@ -78,35 +77,6 @@ export default function MovieGrid() {
         ) : movies.length > 0 ? (
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
             {movies.map((movie, index) => (
-            //   <div
-            //     key={index}
-            //     className="bg-[#1a1a1a] rounded-lg overflow-hidden shadow hover:scale-[1.02] transition-all"
-            //   >
-               
-            //     <img
-            //       src={movie.image}
-            //       alt={movie.title}
-            //       className="w-full h-48 object-cover"
-            //     />
-            //     <div className="p-4">
-            //       <h3 className="text-lg font-semibold">{movie.title}</h3>
-
-            //       <div className="flex items-center w-full justify-between">
-            //           <p className="text-sm text-gray-400 mt-1">
-            //             {movie.release}
-            //           </p>
-            //           <div className="mt-2 text-yellow-400">
-            //             {movie.rating}/10 ⭐
-            //           </div>
-            //       </div>
-
-            //       <Link href={`/review/${movie._id}`}>
-            //   <button className="mt-4 text-sm text-pink-500 hover:underline">
-            //     Read More →
-            //   </button>
-            // </Link>
-            //     </div>
-            //   </div>
               <MovieCard movie={movie} key={movie.id}/>
             ))}
           </div>
