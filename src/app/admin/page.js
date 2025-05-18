@@ -7,11 +7,10 @@ import MovieAnalytics from "@/components/admin/MovieAnalytics";
 export default function AdminPage() {
   return (
     <DashboardLayout
-      children={{
-        upload: <BlogForm />,
-        all: <AllMoviesTable/>,
-        analyze: <MovieAnalytics/>,
-      }}
+      upload={<BlogForm />}
+      all={<AllMoviesTable />}
+      analyze={<MovieAnalytics />}
     />
+
   );
 }

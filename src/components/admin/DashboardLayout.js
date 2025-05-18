@@ -3,7 +3,7 @@
 
 import { useState } from "react";
 
-export default function DashboardLayout({ children }) {
+export default function DashboardLayout({  upload, all, analyze }) {
   const [active, setActive] = useState("upload");
 
   return (
@@ -47,9 +47,9 @@ export default function DashboardLayout({ children }) {
 
       {/* Main Content */}
       <main className="flex-1 bg-gray-100 p-6 overflow-auto">
-        {active === "upload" && children.upload}
-        {active === "all" && children.all}
-        {active === "analyze" && children.analyze}
+        {active === "upload" && upload}
+        {active === "all" && all}
+        {active === "analyze" && analyze}
       </main>
     </div>
   );
