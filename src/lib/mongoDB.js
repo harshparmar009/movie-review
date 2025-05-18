@@ -10,11 +10,7 @@ export async function connectToDB() {
   if (cached.conn) return cached.conn;
   if (!cached.promise) {
     cached.promise = mongoose
-    .connect(MONGODB_URI, {
-      dbName: "movieBlog",
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    })
+    .connect(MONGODB_URI)
     .then((mongoose) => {
       console.log("✅ Connected to MongoDB");
       return mongoose;

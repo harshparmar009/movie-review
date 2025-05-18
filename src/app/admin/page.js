@@ -1,10 +1,17 @@
-import BlogForm from "@/components/BlogForm";
+
+import DashboardLayout from "@/components/admin/DashboardLayout";
+import BlogForm from "@/components/admin/BlogForm";
+import AllMoviesTable from "@/components/admin/AllMovies";
+import MovieAnalytics from "@/components/admin/MovieAnalytics";
 
 export default function AdminPage() {
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Create New Blog</h1>
-      <BlogForm />
-    </div>
+    <DashboardLayout
+      children={{
+        upload: <BlogForm />,
+        all: <AllMoviesTable/>,
+        analyze: <MovieAnalytics/>,
+      }}
+    />
   );
 }
