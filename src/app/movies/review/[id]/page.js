@@ -1,86 +1,5 @@
-// // app/reviews/[id]/page.jsx (SERVER COMPONENT – DEFAULT)
-// import React from "react";
 
-
-// function getRandomReviews(count = 3) {
-//   return [...allUserReviews].sort(() => 0.5 - Math.random()).slice(0, count);
-// }
-
-// const getYoutubeEmbedURL = (url) => {
-//   try {
-//     const parsed = new URL(url);
-//     if (parsed.hostname.includes("youtube.com")) return `https://www.youtube.com/embed/${parsed.searchParams.get("v")}`;
-//     if (parsed.hostname === "youtu.be") return `https://www.youtube.com/embed/${parsed.pathname.slice(1)}`;
-//     if (parsed.pathname.includes("/embed/")) return url;
-//     return null;
-//   } catch {
-//     return null;
-//   }
-// };
-
-// export default async function ReviewPage({ params }) {
-//   const { id } = params;
-
-//   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"}/api/movies/${id}`, {
-//     cache: "no-store",
-//   });
-
-//   if (!res.ok) throw new Error("Failed to fetch movie");
-
-//   const movie = await res.json();
-//   const reviews = getRandomReviews();
-
-//   return (
-//     <div className="min-h-screen bg-[#0b0b0b] text-white px-6 py-10 mt-18 max-w-5xl mx-auto space-y-10">
-//       <div className="grid md:grid-cols-2 gap-6">
-//         {getYoutubeEmbedURL(movie.movieLink) ? (
-//           <iframe
-//             className="w-full aspect-video rounded-lg shadow"
-//             src={getYoutubeEmbedURL(movie.movieLink)}
-//             title={movie.title}
-//             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-//             allowFullScreen
-//           />
-//         ) : (
-//           <div className="text-gray-400 italic">Trailer not available.</div>
-//         )}
-
-//         <div className="bg-[#1a1a1a] p-4 rounded-lg shadow space-y-3">
-//           <img src={movie.image} alt={movie.title} className="w-32 h-44 object-cover rounded" />
-//           <h1 className="text-2xl font-bold">{movie.title}</h1>
-//           <p className="text-sm text-white/60">{movie.genres.join(", ")}</p>
-//           <p className="text-white text-sm">{movie.content}</p>
-//           <a
-//             href={movie.ticketLink}
-//             target="_blank"
-//             className="inline-block mt-2 bg-yellow-500 text-black px-4 py-2 rounded hover:bg-yellow-400"
-//           >
-//             🎟 Buy Ticket
-//           </a>
-//         </div>
-//       </div>
-
-//       <div className="bg-[#1a1a1a] p-6 rounded-xl shadow space-y-6">
-//         <h2 className="text-2xl text-yellow-500 font-semibold">🌟 Audience Reviews</h2>
-//         <div className="grid md:grid-cols-3 gap-6">
-//           {reviews.map((r, i) => (
-//             <div key={i} className="bg-[#111] p-4 rounded shadow hover:shadow-yellow-500/20">
-//               <div className="flex items-center gap-3 mb-3">
-//                 <img src={r.img} className="w-10 h-10 rounded-full border border-yellow-500" />
-//                 <div>
-//                   <p className="text-white font-semibold">{r.name}</p>
-//                   <p className="text-sm text-gray-400">{r.username}</p>
-//                 </div>
-//               </div>
-//               <p className="text-gray-300 text-sm">{r.review}</p>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
+import Image from "next/image";
 import React from "react";
 
 
@@ -221,7 +140,7 @@ const getMovieById = async (id) => {
                   <div className="flex flex-col sm:flex-row gap-4 flex-1">
                     {/* Poster */}
                     <div className="relative flex-shrink-0 self-center sm:self-start">
-                      <img
+                      <Image
                         src={movie.image}
                         alt={movie.title}
                         className="md:h-40 md:w-28 w-full aspect-video md:aspect-auto object-cover rounded-lg shadow"
@@ -314,7 +233,7 @@ const getMovieById = async (id) => {
                 {reviews.map((r, i) => (
                   <div key={i} className="bg-[#111] p-4 rounded shadow hover:shadow-yellow-500/20">
                     <div className="flex items-center gap-3 mb-3">
-                      <img src={r.img} className="w-10 h-10 rounded-full border border-yellow-500" />
+                      <Image src={r.img} className="w-10 h-10 rounded-full border border-yellow-500" />
                       <div>
                         <p className="text-white font-semibold">{r.name}</p>
                         <p className="text-sm text-gray-400">{r.username}</p>

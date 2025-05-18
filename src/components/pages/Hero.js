@@ -40,7 +40,7 @@ export default function ThreeDMarqueeDemoSecond() {
     <div
       className="relative mx-auto py-10 flex h-screen w-full mt-18 max-w-7xl flex-col items-center justify-center overflow-hidden rounded-3xl">
       <h2 className="relative mx-auto max-w-5xl text-center text-2xl font-bold text-white md:text-4xl lg:text-6xl">
-        "Deep Dives Into Every Frame" Where Every{" "}
+      &quot;Deep Dives Into Every Frame&quot; Where Every{" "}
         <span className="inline-block rounded-xl bg-blue-500/40 px-4 py-1 text-white underline decoration-[#F26E21] decoration-[6px] underline-offset-[16px] backdrop-blur-sm">
           frame
         </span>{" "}
